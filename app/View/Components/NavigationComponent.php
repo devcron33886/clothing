@@ -3,6 +3,10 @@
 namespace App\View\Components;
 
 use App\Models\Category;
+use App\Models\Setting;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class NavigationComponent extends Component
@@ -20,12 +24,12 @@ class NavigationComponent extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
+     * @return Application|Factory|View
      */
-    public function render()
+    public function render(): View|Factory|Application
     {
         $categories = Category::all();
-
-        return view('components.navigation-component', compact('categories'));
+        $settings = Setting::first()->get();
+        return view('components.navigation-component', compact('categories','settings'));
     }
 }

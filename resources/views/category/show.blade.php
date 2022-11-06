@@ -28,7 +28,7 @@
                         <div class="single-widget">
                             <h3>All Categories</h3>
                             <ul class="list">
-                                @foreach ($categories as $category)
+                                @foreach (App\Models\Category::all() as $category)
                                     <li>
                                         <a href="{{ route('category', $category->name) }}">{{ $category->name }}
                                         </a><span>({{ $category->products->count() }})</span>

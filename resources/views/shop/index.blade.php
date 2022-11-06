@@ -28,7 +28,7 @@
                         <div class="single-widget">
                             <h3>All Categories</h3>
                             <ul class="list">
-                                @foreach ($categories as $category)
+                                @foreach (App\Models\Category::all() as $category)
                                     <li>
                                         <a href="{{ route('category', $category->name) }}">{{ $category->name }}
                                         </a><span>({{ $category->products->count() }})</span>
@@ -62,12 +62,20 @@
                         </div>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-grid" role="tabpanel"
-                                aria-labelledby="nav-grid-tab">
+                                 aria-labelledby="nav-grid-tab">
                                 <div class="row">
-                                    @foreach ($products as $item)
-                                        <livewire:card-product :product="$item" />
-                                    @endforeach
-
+                                    @forelse ($products as $item)
+                                    <livewire:card-product :product="$item"/>
+                                    @empty
+                                        <li>
+                                            <div class="alert alert-info rounded-sm shadow-sm">
+                                                <p>
+                                                    Your search keyword could not math anything. Try with a different
+                                                    keyword.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    @endforelse
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
@@ -86,5 +94,5 @@
             </div>
         </div>
     </section>
-    
+
 @endsection
