@@ -10,12 +10,14 @@ Auth::routes();
 Livewire::component('card-product', CardProduct::class);
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about-us', 'HomeController@about')->name('about');
+Route::get('/contact-us', 'HomeController@contact')->name('contact');
 
 Route::post('/newsletters/subscribe', 'NewsletterController@store')->name('newsletters.subscribe');
 
-Route::get('/collections/{category:name}', \App\Http\Controllers\CategoryShowController::class)->name('category');
+Route::get('/collections/{category:slug}', \App\Http\Controllers\CategoryShowController::class)->name('category');
 
-Route::get('/collections/product/{product:name}', App\Http\Controllers\ProductShowController::class)->name('product');
+Route::get('/collections/product/{product:slug}', App\Http\Controllers\ProductShowController::class)->name('product');
 
 Route::get('/collections', \App\Http\Controllers\ShopController::class)->name('shop');
 

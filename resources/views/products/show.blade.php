@@ -11,7 +11,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <ul class="breadcrumb-nav">
                         <li><a href="{{ route('home') }}"><i class="lni lni-home"></i> Home</a></li>
-                        <li><a href="{{ route('category', $product->category->name) }}">{{ $product->category->name }}</a>
+                        <li><a href="{{ route('category', $product->category->slug) }}">{{ $product->category->name }}</a>
                         </li>
                         <li>{{ $product->name }}</li>
                     </ul>
@@ -43,7 +43,7 @@
                         <div class="product-info">
                             <h2 class="title">{{ $product->name }}</h2>
                             <p class="category"><i class="lni lni-tag"></i> <a
-                                    href="{{ route('category', $product->name) }}">{{ $product->category->name }}</a></p>
+                                    href="{{ route('category', $product->slug) }}">{{ $product->category->name }}</a></p>
                             <h3 class="price">{{ $product->formattedPrice() }}</h3>
                             <p class="info-text">{{ $product->description }}</p>
 
@@ -73,8 +73,6 @@
                                             <i class="fa fa-info-circle"></i> Out Of Stock
                                         </span>
                                     @endif
-
-
                                 </div>
                             </div>
                         </div>

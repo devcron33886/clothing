@@ -30,7 +30,7 @@
                             <ul class="list">
                                 @foreach (App\Models\Category::all() as $category)
                                     <li>
-                                        <a href="{{ route('category', $category->name) }}">{{ $category->name }}
+                                        <a href="{{ route('category', $category->slug) }}">{{ $category->name }}
                                         </a><span>({{ $category->products->count() }})</span>
                                     </li>
                                 @endforeach

@@ -107,7 +107,7 @@
                             <ul class="sub-category">
                                 @foreach ($categories as $category)
                                     <li>
-                                        <a href="{{ route('category', $category->name) }}">{{ $category->name }}</a>
+                                        <a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -130,14 +130,14 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="{{-- {{ route('shop') }} --}}" aria-label="Toggle navigation">Collections</a>
+                                        <a href=" {{ route('shop') }} " aria-label="Toggle navigation">Collections</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{-- {{ route('about') }} --}}" aria-label="Toggle navigation">About
+                                        <a href=" {{ route('about') }} " aria-label="Toggle navigation">About
                                             Us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{-- {{ route('contact') }} --}}" aria-label="Toggle navigation">Contact
+                                        <a href=" {{ route('contact') }} " aria-label="Toggle navigation">Contact
                                             Us</a>
                                     </li>
                                 </ul>
