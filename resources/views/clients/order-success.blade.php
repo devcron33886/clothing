@@ -34,7 +34,7 @@
                 <div>
                     Back to Home
                 </div>
-                <img src="{{ asset('img/GARDEN_LOGO.png') }}" alt="" style="max-height: 100px">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="" style="max-height: 200px">
             </a>
 
 
@@ -71,7 +71,7 @@
                                 <b>Client</b>
                             </span>
                         </td>
-                        <td> : {{ $order->user===null ? $order->clientName:$order->user->name }}</td>
+                        <td> : {{$order->client_name }}</td>
                     </tr>
                     <tr>
                         <td>
@@ -79,7 +79,7 @@
                             <b>Client phone</b>
                             </span>
                         </td>
-                        <td> : {{ \App\MyFunc::format_phone_us($order->clientPhone) }}</td>
+                        <td> : {{ \App\MyFunc::format_phone_us($order->client_phone) }}</td>
                     </tr>
                     <tr>
                         <td>
@@ -116,7 +116,7 @@
                             <td>{{ $orderItem->product->name }}</td>
                             <td>{{ number_format($orderItem->price) }}</td>
                             <td>{{ $orderItem->qty }}</td>
-                            <td>{{ number_format($orderItem->sub_total) }}</td>
+                            <td>{{ number_format($orderItem->price *$orderItem->qty) }}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -126,7 +126,7 @@
                             Sub Total:
                         </th>
                         <th>
-                            {{ $order->orderItems()->sum('sub_total') }} Rwf
+                           {{ $order->formattedTotal() }}
                         </th>
                     </tr>
                     <tr>
@@ -134,7 +134,7 @@
                             Shipping:
                         </th>
                         <th>
-                            {{ number_format($order->shipping_amount) }} Rwf
+                            {{ $order->shipping->formattedPrice() }}
                         </th>
                     </tr>
                     <tr>
@@ -142,7 +142,7 @@
                             Total:
                         </th>
                         <th>
-                            {{ number_format($order->getTotalAmountToPay()) }} Rwf
+                           FRW {{ number_format($order->total + $order->shipping->price) }}
                         </th>
                     </tr>
                     <tr>
@@ -151,7 +151,7 @@
                         </th>
                         <th>
                             <strong class="text-success">
-                                {{ number_format($order->getTotalAmountToPay()) }} Rwf
+                                FRW {{ number_format($order->total + $order->shipping->price) }}
                             </strong>
                         </th>
                     </tr>

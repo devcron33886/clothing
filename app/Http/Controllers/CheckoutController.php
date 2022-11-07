@@ -66,10 +66,10 @@ namespace App\Http\Controllers;
 
             DB::commit();
            /* Mail::to($order->email)->send(new NotifyClientMail($order));*/
-            $users = User::whereHas('roles', function ($q) {
+           /*  $users = User::whereHas('roles', function ($q) {
                 return $q->where('title', 'Admin');
             })->get();
-            Notification::send($users, new NewOrderNotification($order));
+            Notification::send($users, new NewOrderNotification($order)); */
 
             Cart::clear();
 
