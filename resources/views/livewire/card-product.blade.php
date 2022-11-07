@@ -2,7 +2,7 @@
     <div class="single-product">
         <div class="product-image">
             <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="{{ $product->name }}"
-                style="width: 100%;height: 100%;object-fit: cover">
+                style="width: 100%;height: 70%;object-fit: cover">
             <span class="new-tag">New</span>
 
             @if ($product->status === 'Available')
