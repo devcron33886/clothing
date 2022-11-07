@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach(\App\Models\Product::with('category')->where('status','=','Available')->limit(12)->get() as $item)
+                @foreach(\App\Models\Product::with(['category','media'])->where('status','=','Available')->orderBy('id','DESC')->limit(9)->get() as $item)
                     <livewire:card-product :product="$item" label="NEW" />
                 @endforeach
             </div>
