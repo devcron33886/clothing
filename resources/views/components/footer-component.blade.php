@@ -112,11 +112,11 @@
                             <li>
                                 <span>Follow Us On:</span>
                             </li>
-                            <li><a href="javascript:void(0)" target="_blank"><i class="lni lni-facebook-filled"></i></a>
+
                             </li>
-                            <li><a href="javascript:void(0)" target="_blank"><i
+                            <li><a href="https://twitter.com/igihozo_couture" target="__blank"><i
                                         class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)" target="_blank"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/igihozo_couture/" target="__blank"><i class="lni lni-instagram"></i></a></li>
 
                         </ul>
                     </div>
