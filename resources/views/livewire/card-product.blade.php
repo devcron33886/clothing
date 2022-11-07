@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-6 col-12">
+<div class="col-lg-3 col-md-6 col-12">
     <div class="single-product">
         <div class="product-image">
             <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="{{ $product->name }}"
