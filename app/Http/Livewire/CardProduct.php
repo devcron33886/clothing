@@ -10,9 +10,11 @@ class CardProduct extends Component
 {
     public $product;
 
+    public $label;
+
     public $quantity;
 
-    public function mount(Product $product)
+    public function mount(Product $product, string $label)
     {
         $this->quantity = 1;
     }

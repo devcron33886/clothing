@@ -3,7 +3,10 @@
         <div class="product-image">
             <img src="{{ $product->getFirstMediaUrl('image', 'preview') }}" alt="{{ $product->name }}"
                 style="width: 100%;height: 100%;object-fit: cover">
-            <span class="new-tag">New</span>
+            @if(!empty($label))
+                <span class="new-tag">{{ $label }}</span>
+            @endif
+
 
             @if ($product->status === 'Available')
                 @if ($added)

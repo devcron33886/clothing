@@ -91,8 +91,8 @@
                 </div>
             </div>
             <div class="row">
-                @foreach (\App\Models\Product::with('category')->where('status', '=', 'Available')->limit(4)->get()->take(10) as $item)
-                    <livewire:card-product :product="$item" />
+                @foreach (\App\Models\Product::with('category')->where('status', '=', 'Available')->limit(4)->inRandomOrder()->get() as $item)
+                    <livewire:card-product :product="$item" label=""/>
                 @endforeach
             </div>
         </div>
@@ -110,7 +110,7 @@
             </div>
             <div class="row">
                 @foreach(\App\Models\Product::with('category')->where('status','=','Available')->limit(12)->get() as $item)
-                    <livewire:card-product :product="$item" />
+                    <livewire:card-product :product="$item" label="NEW" />
                 @endforeach
             </div>
         </div>
