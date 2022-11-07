@@ -72,7 +72,7 @@ class Order extends Model
         });
     }
 
-    public function formattedTotal():Money
+    public function formattedTotal(): Money
     {
         return  Money::RWF($this->total);
     }

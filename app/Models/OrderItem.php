@@ -53,5 +53,4 @@ class OrderItem extends Model
             $builder->whereHas('product');
         });
     }
-
 }

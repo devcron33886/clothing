@@ -21,14 +21,15 @@ class HomeController extends Controller
     {
         return view('about');
     }
+
     public function contact()
     {
-        $settings=Setting::first()->get();
-        return view('contact',compact('settings'));
+        $settings = Setting::first()->get();
+
+        return view('contact', compact('settings'));
     }
 
     public function storeContact(Request $request)
     {
-
     }
 }

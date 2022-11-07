@@ -41,14 +41,14 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-contact">
                             <h3>Get In Touch With Us</h3>
-                            {{-- @foreach($settings as $setting)
-                                <p class="phone">Phone: {{ $setting->mobile ??'' }}</p>
-                                <p class="phone">WhatsApp: {{ $setting->whathsapp ??'' }}</p>
-                                <p class="phone">Address: {{ $setting->location ??'' }}</p>
+                             @foreach($settings as $setting)
+                                <p class="phone">Phone: {{ $setting->phone_number_1 ??'' }}</p>
+                                <p class="phone">WhatsApp: {{ $setting->whatsapp ??'' }}</p>
+                                <p class="phone">Address: {{ $setting->address ??'' }}</p>
                                 <p class="mail">
                                     <a href="mailto:sales@igihozocouture.com">{{ $setting->email ??'' }}</a>
                                 </p>
-                            @endforeach --}}
+                            @endforeach
 
                         </div>
                         <!-- End Single Widget -->
@@ -58,12 +58,12 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-link">
                             <h3>Information</h3>
-                            {{-- <ul>
+                             <ul>
                                 <li><a href="{{ route('about') }}">About Us</a></li>
                                 <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 <li><a href="{{ route('shop') }}">All Collections</a></li>
-                                <li><a href="{{ route('welcome') }}">FAQs Page</a></li>
-                            </ul> --}}
+                                <li><a href="{{ route('home') }}">FAQs Page</a></li>
+                            </ul>
                         </div>
                         <!-- End Single Widget -->
                     </div>
@@ -71,11 +71,11 @@
                         <!-- Single Widget -->
                         <div class="single-footer f-link">
                             <h3>Shop Departments</h3>
-                            {{-- <ul>
+                             <ul>
                                 @foreach($categories as $category)
-                                    <li><a href="{{ route('category-details',$category->slug) }}">{{ $category->name }}</a></li>
+                                    <li><a href="{{ route('category',$category->slug) }}">{{ $category->name }}</a></li>
                                 @endforeach
-                            </ul> --}}
+                            </ul>
                         </div>
                         <!-- End Single Widget -->
                     </div>

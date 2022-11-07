@@ -30,6 +30,7 @@ class NavigationComponent extends Component
     {
         $categories = Category::all();
         $settings = Setting::first()->get();
-        return view('components.navigation-component', compact('categories','settings'));
+
+        return view('components.navigation-component', compact('categories', 'settings'));
     }
 }

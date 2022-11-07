@@ -85,8 +85,8 @@ class Category extends Model implements HasMedia
     public function sluggable(): array
     {
         return [
-            'slug'=>[
-                'source'=>'name'
+            'slug' => [
+                'source' => 'name',
             ],
         ];
     }

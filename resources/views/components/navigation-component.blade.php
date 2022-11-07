@@ -9,10 +9,10 @@
                             <ul class="menu-top-link">
                                 @foreach ($settings as $setting)
                                     <li>
-                                        <p class="text-white"><i class="lni lni-envelope"></i> {{ $setting->email }}</p>
+                                        <p class="text-white"><i class="lni lni-envelope"></i> {{ $setting->email_1 }}</p>
                                     </li>
                                     <li>
-                                        <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->mobile }}</p>
+                                        <p class="text-white"><i class="lni lni-phone"></i> {{ $setting->phone_number_1 }}</p>
                                     </li>
                                 @endforeach
                             </ul>
@@ -22,8 +22,8 @@
                         <div class="top-middle">
                             <ul class="useful-links">
                                 <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{-- {{ route('about') }} --}}">About Us</a></li>
-                                <li><a href="{{-- {{ route('contact') }} --}}">Contact Us</a></li>
+                                <li><a href=" {{ route('about') }} ">About Us</a></li>
+                                <li><a href=" {{ route('contact') }} ">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                                 @foreach ($settings as $setting)
                                     <i class="lni lni-phone"></i>
                                     <h3>Hotline:
-                                        <span>{{ $setting->mobile }}</span>
+                                        <span>{{ $setting->phone_number_1 }}</span>
                                     </h3>
                                 @endforeach
 

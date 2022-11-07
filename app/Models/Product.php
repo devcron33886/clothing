@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
     use Cknow\Money\Money;
     use Cviebrock\EloquentSluggable\Sluggable;
@@ -116,7 +116,7 @@
         {
             return [
                 'slug' => [
-                    'source' => 'name'
+                    'source' => 'name',
                 ],
 
             ];

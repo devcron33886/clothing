@@ -14,7 +14,7 @@ class ShopController extends Controller
         $search = $request->input('search');
 
         $products = Product::available()
-        ->with(['category','media'])
+        ->with(['category', 'media'])
             ->when($cat, function (Builder $builder, $cat) {
                 $builder->whereHas('category', function (Builder $builder) use ($cat) {
                     $builder->where('name', '=', $cat);
@@ -31,7 +31,6 @@ class ShopController extends Controller
             ->paginate(15);
 
         $products->appends(['search' => $search, 'cat' => $cat]);
-
 
         return view('shop.index', compact('products'));
     }

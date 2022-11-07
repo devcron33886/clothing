@@ -1,8 +1,12 @@
 @component('mail::message')
-# Order placed
+    <img src="{{ asset('images/logo/logo.png') }}" alt="" style="max-height: 200px">
+
+# ORDER {{ $order->order_no }} HAS BEEN PLACED.
+
 
 @component('mail::table')
-    <table class="">
+
+    <table>
         <thead class="sr-only">
         <tr>
         </tr>
@@ -23,7 +27,7 @@
                 <b>Client</b>
             </span>
             </td>
-            <td> : {{ $order->user===null ? $order->clientName:$order->user->name }}</td>
+            <td> : {{ $order->user===null ? $order->client_name:$order->user->name }}</td>
         </tr>
         <tr>
             <td>
@@ -31,7 +35,7 @@
             <b>Client phone</b>
             </span>
             </td>
-            <td> : {{ \App\MyFunc::format_phone_us($order->clientPhone) }}</td>
+            <td> : {{ \App\MyFunc::format_phone_us($order->client_phone) }}</td>
         </tr>
         <tr>
             <td>
@@ -71,33 +75,33 @@
                 <td>{{ $orderItem->product->name }}</td>
                 <td>{{ number_format($orderItem->price) }}</td>
                 <td>{{ $orderItem->qty }}</td>
-                <td>{{ number_format($orderItem->sub_total) }}</td>
+                <td>{{ number_format($orderItem->price * $orderItem->qty) }}</td>
             </tr>
         @endforeach
         </tbody>
         <tfoot>
         <tr>
-            <th colspan="3">
+            <th colspan="3" class="align-content-lg-start">
                 Sub Total
             </th>
             <th>
-                : {{ number_format($order->orderItems()->sum('sub_total')) }} Rwf
+                {{ $order->formattedTotal() }}
             </th>
         </tr>
         <tr>
-            <th colspan="3">
-                Shipping
+            <th colspan="3"  class="align-content-lg-start">
+                Shipping Fee
             </th>
             <th>
-                : {{ number_format($order->shipping_amount) }} Rwf
+                 {{ $order->shipping->formattedPrice() }}
             </th>
         </tr>
         <tr>
-            <th colspan="3">
+            <th colspan="3"  class="align-content-lg-start">
                 Total
             </th>
             <th>
-                : {{ number_format($order->orderItems()->sum('sub_total')+$order->shipping_amount) }} Rwf
+                 RWF {{ number_format($order->total + $order->shipping->price) }}
             </th>
         </tr>
         </tfoot>
