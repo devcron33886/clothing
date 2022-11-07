@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('description')" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.svg') }}" />
     <title>Igihozo couture @yield('title')</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
