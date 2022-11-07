@@ -2,7 +2,8 @@
 @section('styles')
 @endsection
 
-@section('title', '|Home')
+@section('title', ' - Home')
+@section('description','Igihozo couture is the best fahion designer shop located in in Kigali City tower(KCT) 2nd Floor (F7).')
 
 @section('content')
     <livewire:home-page :slides="$slides" :categories="$categories" />

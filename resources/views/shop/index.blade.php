@@ -1,5 +1,6 @@
 @extends('layouts.customer')
 @section('title', '|Collection')
+@section('description','The best fashion desinger in kigali with high quality dresses, suits , jump suits shirts etc.')
 @section('content')
     <div class="breadcrumbs">
         <div class="container">
