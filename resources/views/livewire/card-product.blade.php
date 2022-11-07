@@ -9,7 +9,7 @@
                 @if ($added)
                     <div class="button">
                         <button type="button" wire:click="remove" wire:loading.attr="disabled"
-                            class="btn btn-danger">
+                            class="btn btn-danger" style="background-color:red !important;">
                             Remove
                         </button>
                     </div>
