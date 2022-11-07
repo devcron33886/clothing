@@ -65,7 +65,7 @@
                                  aria-labelledby="nav-grid-tab">
                                 <div class="row">
                                     @forelse ($products as $item)
-                                    <livewire:card-product :product="$item"/>
+                                    <livewire:card-product :product="$item" labbel=""/>
                                     @empty
                                         <li>
                                             <div class="alert alert-info rounded-sm shadow-sm">
