@@ -15,30 +15,8 @@ class UpdateOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'order_no' => [
-                'string',
-                'required',
-            ],
-            'client_name' => [
-                'string',
-                'required',
-            ],
-            'client_phone' => [
-                'string',
-                'required',
-            ],
-            'shipping_address' => [
-                'string',
-                'required',
-            ],
-            'notes' => [
-                'required',
-            ],
-            'total' => [
-                'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
+            'status'=>[
+                'required'
             ],
         ];
     }

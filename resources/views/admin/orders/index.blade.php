@@ -33,21 +33,14 @@
                     <th>
                         {{ trans('cruds.order.fields.client_phone') }}
                     </th>
-                    <th>
-                        {{ trans('cruds.order.fields.shipping_address') }}
-                    </th>
+
                     <th>
                         {{ trans('cruds.order.fields.status') }}
                     </th>
                     <th>
                         {{ trans('cruds.order.fields.total') }}
                     </th>
-                    <th>
-                        {{ trans('cruds.order.fields.payment') }}
-                    </th>
-                    <th>
-                        {{ trans('cruds.order.fields.shipping') }}
-                    </th>
+
                     <th>
                         &nbsp;
                     </th>
@@ -108,11 +101,9 @@
 { data: 'order_no', name: 'order_no' },
 { data: 'client_name', name: 'client_name' },
 { data: 'client_phone', name: 'client_phone' },
-{ data: 'shipping_address', name: 'shipping_address' },
 { data: 'status', name: 'status' },
 { data: 'total', name: 'total' },
-{ data: 'payment_name', name: 'payment.name' },
-{ data: 'shipping_title', name: 'shipping.title' },
+
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
@@ -124,7 +115,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 });
 
 </script>

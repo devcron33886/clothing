@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyOrderRequest;
-use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Order;
 use App\Models\PaymentMethod;
@@ -80,25 +79,6 @@ class OrderController extends Controller
         return view('admin.orders.index');
     }
 
-    public function create()
-    {
-        abort_if(Gate::denies('order_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $updated_bies = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $payments = PaymentMethod::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $shippings = ShippingType::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        return view('admin.orders.create', compact('payments', 'shippings', 'updated_bies'));
-    }
-
-    public function store(StoreOrderRequest $request)
-    {
-        $order = Order::create($request->all());
-
-        return redirect()->route('admin.orders.index');
-    }
 
     public function edit(Order $order)
     {
@@ -122,14 +102,7 @@ class OrderController extends Controller
         return redirect()->route('admin.orders.index');
     }
 
-    public function show(Order $order)
-    {
-        abort_if(Gate::denies('order_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $order->load('updated_by', 'payment', 'shipping');
-
-        return view('admin.orders.show', compact('order'));
-    }
 
     public function destroy(Order $order)
     {
