@@ -1,41 +1,28 @@
-@extends('layouts.c')
-@section('styles')
-@endsection
-
-@section('title','|Home')
-
+@extends('layouts.admin')
 @section('content')
- <livewire:home-page :slides="$slides" :categories="$categories" />
-@endsection
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    Dashboard
+                </div>
 
+                <div class="card-body">
+                    @if(session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
 @section('scripts')
-    <script src="{{ asset('js/my-animation.min.js') }}"></script>
-    <script>
-        $('.center').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 3,
-            autoplay: true,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    </script>
+@parent
+
 @endsection

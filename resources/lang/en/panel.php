@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'site_title' => 'Fruits',
+    'site_title' => 'Igihozo Couture',
 ];
