@@ -10,7 +10,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('order_no');
+            $table->string('order_no')->nullable();
             $table->string('client_name');
             $table->string('client_phone');
             $table->string('email')->nullable();

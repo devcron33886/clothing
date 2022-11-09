@@ -177,11 +177,11 @@
                             <div class="sub-total-price">
                                 <div class="total-price">
                                     <p class="value">Subtotal Price:</p>
-                                    <p class="price">$144.00</p>
+                                    <p class="price">FRW {{ number_format(Cart::getTotal()) }}</p>
                                 </div>
                                 <div class="total-price shipping">
                                     <p class="value">Shipping Price:</p>
-                                    <p class="price">$10.50</p>
+                                    <p class="price"> Door Step Delivery: FRW 2500<br> Self Pick up: FRW 0</p>
                                 </div>
 
                             </div>

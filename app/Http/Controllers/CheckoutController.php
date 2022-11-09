@@ -37,6 +37,7 @@ class CheckoutController extends Controller
             'email' => 'required|email',
             'shipping_address' => 'required',
             'client_phone' => 'required| min:10',
+            'notes' =>'required',
         ]);
 
         if (Cart::isEmpty()) {
@@ -44,7 +45,6 @@ class CheckoutController extends Controller
         }
         DB::beginTransaction();
         $order = new Order();
-        $order->setOrderNo();
         $order->client_phone = $request->input('client_phone');
         $order->email = $request->input('email');
         $order->client_name = $request->input('client_name');
@@ -64,7 +64,7 @@ class CheckoutController extends Controller
             $orderItem->qty = $cartItem->quantity;
             $order->orderItems()->save($orderItem);
         }
-
+        $order->setOrderNo('ORD'.'-');
         DB::commit();
         Mail::to($order->email)->send(new OrderPlaced($order));
 

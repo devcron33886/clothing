@@ -70,7 +70,7 @@
                                 <div class="content">
                                     <h2>Weekly Sale!</h2>
                                     <p>Saving up to 50% off all online store items this week.</p>
-                                    <a class="btn btn-outline-primary" href="{{-- {{ route('shop') }} --}}">Shop Now</a>
+                                    <a class="btn btn-outline-primary" href="{{ route('shop') }}">Shop Now</a>
                                 </div>
                             </div>
 
