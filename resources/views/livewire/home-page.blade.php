@@ -40,7 +40,7 @@
                                                 <div class="content">
 
                                                     <div class="button">
-                                                        <a href="{{-- {{ route('shop') }} --}}" class="btn">Shop Now</a>
+                                                        <a href="{{ route('shop') }}" class="btn">Shop Now</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -47,16 +47,8 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-7 col-md-8 col-12">
                                     <div class="product-sorting">
-                                        <label for="sorting">Sort by:</label>
-                                        <select class="form-control" id="sorting">
-                                            <option>Popularity</option>
-                                            <option>Low - High Price</option>
-                                            <option>High - Low Price</option>
-                                            <option>Average Rating</option>
-                                            <option>A - Z Order</option>
-                                            <option>Z - A Order</option>
-                                        </select>
-                                        <h3 class="total-show-product">Showing: <span>1 - 12 items</span></h3>
+
+                                        <h3 class="total-show-product">Showing: <span>{{ $products->count() }} {{ Str::plural('product', $products->count()) }}</span></h3>
                                     </div>
                                 </div>
                             </div>

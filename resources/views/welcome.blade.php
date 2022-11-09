@@ -3,7 +3,7 @@
 @endsection
 
 @section('title', ' - Home')
-@section('description','Igihozo couture is the best fahion designer shop located in in Kigali City tower(KCT) 2nd Floor (F7).')
+@section('description','Igihozo La maison de couture is the best fahion designer shop located in in Kigali City tower(KCT) 2nd Floor (F7).')
 
 @section('content')
     <livewire:home-page :slides="$slides" :categories="$categories" />
@@ -17,7 +17,7 @@
                                 <h2 class="text-white">{{ $category->name }}</h2>
 
                                 <div class="button">
-                                    <a href="product-grids.html" class="btn">Shop</a>
+                                    <a href="{{ route('category',$category->slug)}}" class="btn">Shop</a>
                                 </div>
                             </div>
                         </div>
