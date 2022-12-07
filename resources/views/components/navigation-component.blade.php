@@ -103,7 +103,7 @@
                     <div class="nav-inner">
                         <!-- Start Mega Category Menu -->
                         <div class="mega-category-menu">
-                            <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
+                            <span class="cat-button"><a href="{{ route('shop') }}"><i class="lni lni-menu"></i>All Categories</span>
                             <ul class="sub-category">
                                 @foreach ($categories as $category)
                                     <li>
@@ -151,7 +151,7 @@
                     <div class="nav-social">
                         <h5 class="title">Follow Us:</h5>
                         <ul>
-                            
+
                             <li>
                                 <a href="https://twitter.com/igihozo_couture" target="__blank"><i class="lni lni-twitter-original"></i></a>
                             </li>

@@ -48,7 +48,9 @@
                                 <div class="col-lg-7 col-md-8 col-12">
                                     <div class="product-sorting">
 
-                                        <h3 class="total-show-product">Showing: <span>{{ $products->count() }} {{ Str::plural('product', $products->count()) }}</span></h3>
+                                        <h3 class="total-show-product">Showing:
+                                            <span>{{ $products->count() }} {{ Str::plural('product', $products->count()) }}</span>
+                                        </h3>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +60,7 @@
                                  aria-labelledby="nav-grid-tab">
                                 <div class="row">
                                     @forelse ($products as $item)
-                                    <livewire:card-product :product="$item" label=""/>
+                                        <livewire:card-product :product="$item" label=""/>
                                     @empty
                                         <li>
                                             <div class="alert alert-info rounded-sm shadow-sm">
@@ -70,15 +72,19 @@
                                         </li>
                                     @endforelse
                                 </div>
+
                                 <div class="row">
                                     <div class="col-12">
 
                                         <div class="pagination left">
-                                            {{ $products->links() }}
+                                            <ul class="pagination-list">
+                                                {{ $products->links() }}
+                                            </ul>
                                         </div>
 
                                     </div>
                                 </div>
+
                             </div>
 
                         </div>
