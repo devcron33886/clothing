@@ -45,7 +45,8 @@
                                 <div class="col-lg-7 col-md-8 col-12">
                                     <div class="product-sorting">
 
-                                        <h3 class="total-show-product">Showing: <span>{{ $products->count() }} {{ Str::plural('product', $products->count()) }}</span></h3>
+                                        <h3 class="total-show-product">Showing: <span>{{ $products->count() }}
+                                                {{ Str::plural('product', $products->count()) }}</span></h3>
                                     </div>
                                 </div>
                             </div>
@@ -69,17 +70,20 @@
                                     </li>
                                 @endforelse
                             </div>
-                            <div class="row">
-                                <div class="col-12">
 
-                                    <div class="pagination left">
-                                        {{ $products->links() }}
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="pagination left">
+                                <ul class="pagination-list">
+                                    {{ $products->links() }}
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
